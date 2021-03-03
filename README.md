@@ -51,12 +51,12 @@ He can do the following things:
     - If paid tier: change price
 
 ## Expected Tech Stack :grey_question:	
-Next.js, React, TypeScript and Tailwind for building the UI.
-Cypress and React Testing Library for tests
-Auth0 for authentication
-Stripe for subscription payments
-Either DynamoDB or Firebase Cloud Firestore for storing data
-For hosting the page either Vercel or AWS.
+- Next.js, React, TypeScript and Tailwind for building the UI.
+- Cypress and React Testing Library for tests
+- Auth0 for authentication
+- Stripe for subscription payments
+- Either DynamoDB or Firebase Cloud Firestore for storing data
+- For hosting the page either Vercel or AWS.
 
 ## Other notes
 Will work with a Kanban methodology to be able to prioritize my features backlog and limit the work in progress.
