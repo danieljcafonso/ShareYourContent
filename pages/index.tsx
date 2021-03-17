@@ -1,7 +1,11 @@
 import Head from 'next/head';
+import { useUser } from '@auth0/nextjs-auth0';
 
 export default function Home() {
-  console.log(process.env.NEXT_PUBLIC_USER);
+  const { user, error, isLoading } = useUser();
+
+  if (isLoading) return <div>Loading...</div>;
+  if (error) return <div>{error.message}</div>;
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen py-2">
@@ -9,7 +13,13 @@ export default function Home() {
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
+      {user ? (
+        <div>
+          Welcome {user.name}! <a href="/api/auth/logout">Logout</a>
+        </div>
+      ) : (
+        <a href="/api/auth/login">Login</a>
+      )}
       <main className="flex flex-col items-center justify-center flex-1 px-20 text-center">
         <h1 className="text-6xl font-bold">
           Welcome to{' '}
