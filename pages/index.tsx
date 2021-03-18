@@ -6,7 +6,7 @@ export default function Home() {
 
   if (isLoading) return <div>Loading...</div>;
   if (error) return <div>{error.message}</div>;
-
+  console.log(process.env.AUTH0_BASE_URL);
   return (
     <div className="flex flex-col items-center justify-center min-h-screen py-2">
       <Head>
